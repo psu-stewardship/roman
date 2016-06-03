@@ -78,13 +78,28 @@ describe "Roman" do
       it {is_expected.to eq 'X'}
     end
 
+    describe "XIII" do
+      let(:value) {13}
+      it {is_expected.to eq 'XIII'}
+    end
+
+    describe "XIV" do
+      let(:value) {14}
+      it {is_expected.to eq 'XIV'}
+    end
+
+    describe "XXVII" do
+      let(:value) {27}
+      it {is_expected.to eq 'XXVII'}
+    end
+
+    describe "XLVIII" do
+      let(:value) {48}
+      it {is_expected.to eq 'XLVIII'}
+    end
   end
 
-  #
-  # def test_27
-  #   assert_equal 'XXVII', 27.to_roman
-  # end
-  #
+
   # def test_48
   #   assert_equal 'XLVIII', 48.to_roman
   # end

@@ -10,12 +10,23 @@ class Roman
   end
 
   def to_roman
-    return numeral_map[value] if (numeral_map[value])
-    return 'I'+numeral_map[value+1] if (numeral_map[value+1])
-    return numeral_map[value-1]+'I' if (numeral_map[value-1])
+    output = ''
+    current_value = value
+    while(current_value>0) do
+      numeral = get_next(current_value)
+      output += numeral[1]
+      current_value -= numeral[0]
+    end
+    output
+  end
 
-    numeral = biggest_numeral(value)
-    numeral[1]+'I'*(value-numeral[0])
+  def get_next(value)
+    return [value,'I'+numeral_map[value+1]] if (numeral_map[value+1])
+    biggest_numeral(value)
+  end
+
+  def four_of_the_same(value)
+
   end
 
   def biggest_numeral(number)
