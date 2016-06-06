@@ -26,7 +26,23 @@ class Roman
 
   def four_of_the_same(output)
     if (output.include?('IIII'))
-      output.gsub('IIII','IV')
+      out = output.gsub('IIII','IV')
+      if (out.include?('VIV'))
+        out = out.gsub('VIV','IX')
+      end
+      out
+    elsif (output.include?('XXXX'))
+        out = output.gsub('XXXX','XL')
+        if (out.include?('LXL'))
+          out = out.gsub('LXL','XC')
+        end
+        out
+    elsif (output.include?('CCCC'))
+      out = output.gsub('CCCC','CD')
+      if (out.include?('DCD'))
+        out = out.gsub('DCD','CM')
+      end
+      out
     else
       output
     end
