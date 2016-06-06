@@ -97,46 +97,50 @@ describe "Roman" do
       let(:value) {48}
       it {is_expected.to eq 'XLVIII'}
     end
+
+    describe "LIX" do
+      let(:value) {59}
+      it {is_expected.to eq 'LIX'}
+    end
+
+    describe "XCIII" do
+      let(:value) {93}
+      it {is_expected.to eq 'XCIII'}
+    end
+
+    describe "CXLI" do
+      let(:value) {141}
+      it {is_expected.to eq 'CXLI'}
+    end
+
+    describe "CLXIII" do
+      let(:value) {163}
+      it {is_expected.to eq 'CLXIII'}
+    end
+
+    describe "CDII" do
+      let(:value) {402}
+      it {is_expected.to eq 'CDII'}
+    end
+
+    describe "DLXXV" do
+      let(:value) {575}
+      it {is_expected.to eq 'DLXXV'}
+    end
+
+    describe "CMXI" do
+      let(:value) {911}
+      it {is_expected.to eq 'CMXI'}
+    end
+
+    describe "MXXIV" do
+      let(:value) {1024}
+      it {is_expected.to eq 'MXXIV'}
+    end
+
+    describe "MMM" do
+      let(:value) {3000}
+      it {is_expected.to eq 'MMM'}
+    end
   end
-
-
-  # def test_48
-  #   assert_equal 'XLVIII', 48.to_roman
-  # end
-  #
-  # def test_59
-  #   assert_equal 'LIX', 59.to_roman
-  # end
-  #
-  # def test_93
-  #   assert_equal 'XCIII', 93.to_roman
-  # end
-  #
-  # def test_141
-  #   assert_equal 'CXLI', 141.to_roman
-  # end
-  #
-  # def test_163
-  #   assert_equal 'CLXIII', 163.to_roman
-  # end
-  #
-  # def test_402
-  #   assert_equal 'CDII', 402.to_roman
-  # end
-  #
-  # def test_575
-  #   assert_equal 'DLXXV', 575.to_roman
-  # end
-  #
-  # def test_911
-  #   assert_equal 'CMXI', 911.to_roman
-  # end
-  #
-  # def test_1024
-  #   assert_equal 'MXXIV', 1024.to_roman
-  # end
-  #
-  # def test_3000
-  #   assert_equal 'MMM', 3000.to_roman
-  # end
 end
