@@ -25,27 +25,19 @@ class Roman
   end
 
   def four_of_the_same(output)
-    if (output.include?('IIII'))
-      out = output.gsub('IIII','IV')
-      if (out.include?('VIV'))
-        out = out.gsub('VIV','IX')
-      end
-      out
-    elsif (output.include?('XXXX'))
-        out = output.gsub('XXXX','XL')
-        if (out.include?('LXL'))
-          out = out.gsub('LXL','XC')
-        end
-        out
-    elsif (output.include?('CCCC'))
-      out = output.gsub('CCCC','CD')
-      if (out.include?('DCD'))
-        out = out.gsub('DCD','CM')
-      end
-      out
-    else
-      output
+    out = four_rule(output,'IIII','IV','VIV','IX')
+    out = four_rule(out,'XXXX','XL','LXL','XC')
+    four_rule(out,'CCCC','CD','DCD','CM')
+  end
+
+  def four_rule(original, four_pattern, four_pattern_sub, sandwich_pattern, sandwich_pattern_sub)
+    return original unless (original.include?(four_pattern))
+
+    out = original.gsub(four_pattern,four_pattern_sub)
+    if (out.include?(sandwich_pattern))
+      out = out.gsub(sandwich_pattern,sandwich_pattern_sub)
     end
+    out
   end
 
   def biggest_numeral(number)
